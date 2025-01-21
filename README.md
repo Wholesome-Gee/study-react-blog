@@ -81,3 +81,36 @@
   ```
 
 ---
+
+## Component : 많은 div들을 한 단어로 줄이고 싶으면..🔥
+
+- **Component** : html 덩어리들을 하나의 기능으로 묶는 문법
+  - component는 PascalCase
+  ```js
+  function App() {
+    return (
+      <div>
+        <Modal />
+      </div>
+    );
+  }
+  // Component 생성
+  function Modal() {
+    return (
+      <div>
+        <h4>Component</h4>
+      </div>
+    );
+  }
+  ```
+- **Fragment** : 빈태그, JSX내 html에서 최상위 태그로 병렬된 \<div>를 사용할 때, 그 상위 태그로 사용
+  ```js
+  function App() {
+    return (
+      <>
+        <div></div>
+        <div></div>
+      </>
+    );
+  }
+  ```
