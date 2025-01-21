@@ -61,3 +61,23 @@
   setItem(item + 1);
   // item = 1
   ```
+
+## array, object state 변경하는 법..🔥
+
+- `let [ item, setItem ] = useState( [], {} )`
+
+  - setItem( )으로 item을 변경할 땐 item의 copy본을 만들고 array/object의 spread문법을 활용
+
+  ```js
+  let [student, setStudent] = useState(['짱구','철수','훈이']
+
+  return (
+    <button onClick={()=>{
+      let copy = [...student]
+      copy[2] = '유리'
+      setStudent(copy)
+    }}
+  )
+  ```
+
+---
