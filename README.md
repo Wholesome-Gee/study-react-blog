@@ -14,3 +14,19 @@
   - 간단한 사이트도 코드가 복잡해짐
 
 ---
+
+## React설치와 개발환경 셋팅..🔥
+
+- NodeJS LTS 설치
+- `npm create vite@latest`
+- 파일 초기화
+  - src 폴더 내 css파일 내용 초기화 ( src/App.css, src/index.css )
+    ```css
+    /* index.css(전역css파일) 내용추가 */
+    body {
+      margin: 0;
+    }
+    div {
+      box-sizing: border-box;
+    }
+    ```
