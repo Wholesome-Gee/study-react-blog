@@ -30,3 +30,16 @@
       box-sizing: border-box;
     }
     ```
+
+---
+
+## 리액트에서 레이아웃 만들 때 쓰는 JSX 문법 3개..🔥
+
+- JSX는 javascript에서 쓰는 html 대용품
+- JSX 문법 3개
+  - `className` ➡️ html 태그에 class부여
+  - `{ 변수 }` ➡️ html 안에서 javascript 변수 사용
+  - `style={{ fontSize:"16px", color:"red" }}` ➡️ html 태그에 style 적용
+    - {{ key: value }} 형식 + key는 camelCase
+
+---
