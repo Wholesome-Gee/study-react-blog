@@ -8,6 +8,7 @@ function App() {
   let [따봉, 따봉변경] = useState([0,0,0])
   let [modal, setModal] = useState(false)
   let [title, setTitle] = useState(0)
+  let [입력값, 입력값변경] = useState('')
   return (
     <div className="App">
       <div className="black-nav">
@@ -28,7 +29,8 @@ function App() {
               setTitle(index)
               }}>
               {글제목} 
-              <span onClick={()=>{ 
+              <span onClick={(event)=>{ 
+                event.stopPropagation();
                 let copy = [...따봉] // [0 0 0 ]
                 copy[index] += 1 
                 따봉변경(copy) 
@@ -39,6 +41,12 @@ function App() {
           </div>
         )
       })}
+      <input onChange={(e)=>{
+        입력값변경(e.target.value);
+        console.log(입력값);
+        
+      }}></input>
+
       {
         modal ? <Modal 글제목={글제목} 글제목변경={글제목변경} title={title}/> : null
       }

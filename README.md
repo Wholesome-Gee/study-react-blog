@@ -242,7 +242,7 @@
               >
                 {글제목}
                 <span
-                  onClick={() => {
+                  onClick={(event) => {
                     let copy = [...따봉]; // [0 0 0 ]
                     copy[index] += 1;
                     따봉변경(copy);
@@ -312,5 +312,14 @@
     text-align: left;
   }
   ```
+
+---
+
+## input 1 : 사용자가 입력한 글 다루기..🔥
+
+- eventhandler는 event 객체를 갖고있다.
+  - `<input onChange={(event)=>{console.log(event.target.value)}}`
+  - `event.stopPropagation()` 이벤트버블링현상 막음
+  - `event.preventDefault()` eventhandler의 기본동작(새로고침 등)을 막음
 
 ---
