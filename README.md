@@ -62,6 +62,8 @@
   // item = 1
   ```
 
+---
+
 ## array, object state 변경하는 법..🔥
 
 - `let [ item, setItem ] = useState( [], {} )`
@@ -104,6 +106,7 @@
   }
   ```
 - **Fragment** : 빈태그, JSX내 html에서 최상위 태그로 병렬된 \<div>를 사용할 때, 그 상위 태그로 사용
+
   ```js
   function App() {
     return (
@@ -114,3 +117,29 @@
     );
   }
   ```
+
+---
+
+## 리액트 환경에서 동적인 UI 만드는 법 (모달창만들기)..🔥
+
+- 동적인 UI 만드는 Step
+
+  - html, css로 미리 동적인 UI 박스를 디자인 해놓는다.
+  - UI 박스를 state로 저장한다.
+  - state(false/true)로 UI를 보였다,숨겼다 한다.
+
+  ```js
+  // Modal component를 동적인 UI로 만들기
+  function App () {
+    let [Modal, setModal] = useState(false)
+
+    return (
+      <div>
+        <button onClick(){()=>{ setModal(!modal) }}> Modal </button>
+          {modal ? <Modal/> : null}
+      </div>
+    )
+  }
+  ```
+
+---
