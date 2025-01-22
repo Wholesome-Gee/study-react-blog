@@ -7,6 +7,7 @@ function App() {
   const [글제목, 글제목변경] = useState(['남자코트 추천','강남 우동맛집','파이썬독학'])
   let [따봉, 따봉변경] = useState([0,0,0])
   let [modal, setModal] = useState(false)
+  let [title, setTitle] = useState(0)
   return (
     <div className="App">
       <div className="black-nav">
@@ -22,7 +23,10 @@ function App() {
       {글제목.map((글제목,index)=>{
         return (
           <div className="list" key={index}>
-            <h4 onClick={()=>{setModal(!modal)}}>
+            <h4 onClick={()=>{
+              setModal(!modal)
+              setTitle(index)
+              }}>
               {글제목} 
               <span onClick={()=>{ 
                 let copy = [...따봉] // [0 0 0 ]
@@ -36,7 +40,7 @@ function App() {
         )
       })}
       {
-        modal ? <Modal 글제목={글제목} 글제목변경={글제목변경}/> : null
+        modal ? <Modal 글제목={글제목} 글제목변경={글제목변경} title={title}/> : null
       }
     </div>
   )
@@ -45,7 +49,7 @@ function App() {
 function Modal(props) {
   return (
     <div className='modal'>
-    <h4>{props.글제목[0]}</h4>
+    <h4>{ props.글제목[props.title] }</h4>
     <p>날짜</p> 
     <p>상세내용</p>
     <button onClick={()=>{
