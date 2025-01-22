@@ -88,7 +88,7 @@
 
 - **Component** : html 덩어리들을 하나의 기능으로 묶는 문법
   - component는 PascalCase
-  ```js
+  ```jsx
   function App() {
     return (
       <div>
@@ -107,7 +107,7 @@
   ```
 - **Fragment** : 빈태그, JSX내 html에서 최상위 태그로 병렬된 \<div>를 사용할 때, 그 상위 태그로 사용
 
-  ```js
+  ```jsx
   function App() {
     return (
       <>
@@ -128,7 +128,7 @@
   - UI 박스를 state로 저장한다.
   - state(false/true)로 UI를 보였다,숨겼다 한다.
 
-  ```js
+  ```jsx
   // Modal component를 동적인 UI로 만들기
   function App () {
     let [Modal, setModal] = useState(false)
@@ -143,3 +143,21 @@
   ```
 
 ---
+
+## map : 많은 div들을 반복문으로 줄이고 싶은 충동이 들 때..🔥
+
+- JSX내의 html에서 반복문을 사용하고 싶다면 map 함수 사용
+- `Array.map(()=>{ return })`
+
+  - Array.map은 callback함수를 갖고, 새로운 Array데이터를 return한다.
+
+  ```jsx
+  function App() {
+    let [따봉, 따봉변경] = useState([0, 1, 2]);
+    return 따봉.map(() => {
+      return <div>👍🏻 {따봉} </div>;
+    });
+  }
+  // [ <div>👍🏻 0 </div>, <div>👍🏻 1 </div>, <div>👍🏻 2 </div> ]
+  // JSX는 html내의 [],{}를 자동으로 제거함
+  ```
