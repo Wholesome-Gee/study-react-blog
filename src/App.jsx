@@ -19,16 +19,10 @@ function App() {
         글제목변경(copy)
       }}>가나다순 정렬</button>
 
-      <button onClick={()=>{
-        let copy = [...글제목]
-        copy[0] = '여자코트 추천'
-        글제목변경(copy)
-        }}>글수정</button>
-
       {글제목.map((글제목,index)=>{
         return (
           <div className="list" key={index}>
-            <h4>
+            <h4 onClick={()=>{setModal(!modal)}}>
               {글제목} 
               <span onClick={()=>{ 
                 let copy = [...따봉] // [0 0 0 ]
@@ -42,18 +36,24 @@ function App() {
         )
       })}
       {
-        modal ? <Modal/> : null
+        modal ? <Modal 글제목={글제목} 글제목변경={글제목변경}/> : null
       }
     </div>
   )
 }
 
-function Modal() {
+function Modal(props) {
   return (
     <div className='modal'>
-    <h4>제목</h4>
-    <p>날짜</p>
+    <h4>{props.글제목[0]}</h4>
+    <p>날짜</p> 
     <p>상세내용</p>
+    <button onClick={()=>{
+      let copy = [...props.글제목]
+      copy[0] = '여자코트 추천'
+      props.글제목변경(copy)
+    }
+    }>글수정</button>
   </div>
   )
 }

@@ -161,3 +161,36 @@
   // [ <div>👍🏻 0 </div>, <div>👍🏻 1 </div>, <div>👍🏻 2 </div> ]
   // JSX는 html내의 [],{}를 자동으로 제거함
   ```
+
+---
+
+## 자식이 부모의 state 가져다쓰고 싶을 때는 props..🔥
+
+- props는 부모가 자식에게 물려주는 data가 담겨있다.
+
+  - 문자열,숫자,boolean,[],{},function 다 가능함.
+
+  ```js
+  function App() {
+    let [team, setTeam] = useState("Chelsea");
+    return (
+      <div>
+        <Modal team={team} setTeam={setTeam} />
+      </div>
+    );
+  }
+
+  function Modal(props) {
+    return (
+      <div
+        onClick={() => {
+          props.setTeam("Arsenal");
+        }}
+      >
+        {props.team}
+      </div>
+    );
+  }
+  ```
+
+  ***
